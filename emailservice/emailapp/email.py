@@ -9,7 +9,10 @@ mg_api_key = "key-00c8c44e8e5c484cca408e79e252dcd7"
 sg_url = "https://api.sendgrid.com/api/mail.send.json"
 sg_api_key = "passisapikey"
 
-
+"""
+attempts to send an email using a simple POST request given a from address, to address, subject, and message body
+one service is tried, and if a request exception is thrown (because the service is down), a second is used instead
+"""
 def send_simple_message(sender, to, subject, text):
 
 	#mailgun is default
